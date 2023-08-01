@@ -1,0 +1,4 @@
+com/corbandalas/launcher/config/CustomBeanDefinitionPostProcessor.class
+com/corbandalas/launcher/config/CustomBeanPostProcessor.class
+com/corbandalas/launcher/config/AppConfig.class
+com/corbandalas/launcher/CorbandalasApplication.class

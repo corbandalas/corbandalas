@@ -1,0 +1,16 @@
+/Users/artyomtereshchenko/IdeaProjects/corbandalas/data-jpa/src/main/java/com/corbandalas/data/repository/PostRepository.java
+/Users/artyomtereshchenko/IdeaProjects/corbandalas/data-jpa/src/main/java/com/corbandalas/data/mapper/PostMapper.java
+/Users/artyomtereshchenko/IdeaProjects/corbandalas/data-jpa/src/main/java/com/corbandalas/data/repository/RoleRepository.java
+/Users/artyomtereshchenko/IdeaProjects/corbandalas/data-jpa/src/main/java/com/corbandalas/data/model/Role.java
+/Users/artyomtereshchenko/IdeaProjects/corbandalas/data-jpa/src/main/java/com/corbandalas/data/adapters/CustomerJPAAdapter.java
+/Users/artyomtereshchenko/IdeaProjects/corbandalas/data-jpa/src/main/java/com/corbandalas/data/repository/CommentRepository.java
+/Users/artyomtereshchenko/IdeaProjects/corbandalas/data-jpa/src/main/java/com/corbandalas/data/mapper/RoleMapper.java
+/Users/artyomtereshchenko/IdeaProjects/corbandalas/data-jpa/src/main/java/com/corbandalas/data/repository/CustomerRepository.java
+/Users/artyomtereshchenko/IdeaProjects/corbandalas/data-jpa/src/main/java/com/corbandalas/data/adapters/RoleJPAAdapter.java
+/Users/artyomtereshchenko/IdeaProjects/corbandalas/data-jpa/src/main/java/com/corbandalas/data/model/Comment.java
+/Users/artyomtereshchenko/IdeaProjects/corbandalas/data-jpa/src/main/java/com/corbandalas/data/mapper/EntityMapper.java
+/Users/artyomtereshchenko/IdeaProjects/corbandalas/data-jpa/src/main/java/com/corbandalas/data/adapters/PostJPAAdapter.java
+/Users/artyomtereshchenko/IdeaProjects/corbandalas/data-jpa/src/main/java/com/corbandalas/data/model/Customer.java
+/Users/artyomtereshchenko/IdeaProjects/corbandalas/data-jpa/src/main/java/com/corbandalas/data/model/BaseEntity.java
+/Users/artyomtereshchenko/IdeaProjects/corbandalas/data-jpa/src/main/java/com/corbandalas/data/model/Post.java
+/Users/artyomtereshchenko/IdeaProjects/corbandalas/data-jpa/src/main/java/com/corbandalas/data/mapper/CustomerMapper.java

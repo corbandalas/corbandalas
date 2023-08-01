@@ -1,0 +1,17 @@
+{
+  "productionMode": false,
+  "eagerServerLoad": false,
+  "npmFolder": "/Users/artyomtereshchenko/IdeaProjects/corbandalas/web",
+  "node.version": "v18.14.1",
+  "node.download.root": "https://nodejs.org/dist/",
+  "generatedFolder": "/Users/artyomtereshchenko/IdeaProjects/corbandalas/web/target/frontend",
+  "frontendFolder": "/Users/artyomtereshchenko/IdeaProjects/corbandalas/web/frontend",
+  "connect.javaSourceFolder": "/Users/artyomtereshchenko/IdeaProjects/corbandalas/web/src/main/java",
+  "javaResourceFolder": "/Users/artyomtereshchenko/IdeaProjects/corbandalas/web/src/main/resources",
+  "connect.applicationProperties": "/Users/artyomtereshchenko/IdeaProjects/corbandalas/web/src/main/resources/application.properties",
+  "connect.openApiFile": "/Users/artyomtereshchenko/IdeaProjects/corbandalas/web/target/generated-resources/openapi.json",
+  "project.frontend.generated": "/Users/artyomtereshchenko/IdeaProjects/corbandalas/web/frontend/generated",
+  "pnpm.enable": false,
+  "require.home.node": false,
+  "build.folder": "target"
+}

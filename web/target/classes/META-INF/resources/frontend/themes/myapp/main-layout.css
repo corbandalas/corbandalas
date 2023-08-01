@@ -1,0 +1,26 @@
+vaadin-scroller[slot="drawer"] {
+  padding: var(--lumo-space-s);
+  margin: 0;
+  width: 100%;
+}
+
+[slot="drawer"]:is(header, footer) {
+  display: flex;
+  align-items: center;
+  gap: var(--lumo-space-s);
+  padding: var(--lumo-space-s) var(--lumo-space-m);
+  min-height: var(--lumo-size-xl);
+  box-sizing: border-box;
+
+}
+
+[slot="drawer"]:is(header, footer):is(:empty) {
+  display: none;
+
+}
+
+.app-header {
+  /* This will be applied to the button and all other elements in the app-header */
+  --lumo-primary-text-color: green;
+  background-image: url("https://web.archive.org/web/20130908180609im_/http://corbandalas.com/wp-content/themes/DailyNotes/images/bg-2.png"); no-repeat: scroll center -37px transparent;
+}
