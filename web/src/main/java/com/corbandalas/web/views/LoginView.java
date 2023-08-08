@@ -10,7 +10,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 
 @Route("login")
-@PageTitle("Логин | Марки Донбасса")
+@PageTitle("Логин | corbandalas.com")
 @AnonymousAllowed
 public class LoginView extends LoginOverlay implements BeforeEnterObserver {
 
@@ -22,7 +22,7 @@ public class LoginView extends LoginOverlay implements BeforeEnterObserver {
 
         LoginI18n i18n = LoginI18n.createDefault();
         i18n.setHeader(new LoginI18n.Header());
-        i18n.getHeader().setTitle("Марки Донбасса");
+        i18n.getHeader().setTitle("corbandalas.com");
         i18n.getHeader().setDescription("Логин");
         i18n.setAdditionalInformation(null);
         setI18n(i18n);

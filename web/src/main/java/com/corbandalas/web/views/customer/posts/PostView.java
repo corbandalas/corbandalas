@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.UUID;
 
-@PageTitle("Посты")
+@PageTitle("Статьи")
 @Route(value = "post/:postID", layout = MainLayout.class)
 @AnonymousAllowed
 @Slf4j
@@ -41,19 +41,19 @@ public class PostView extends VerticalLayout implements BeforeEnterObserver {
 
         postServicePort.retrieve(UUID.fromString(postID)).ifPresent(post -> {
 
-            H2 dateSubtitle = new H2();
+            H2 subtitle = new H2();
+            subtitle.addClassNames("text-s", "text-secondary");
+            subtitle.setText(post.getTitle());
+
+            add(subtitle);
+
+            Span dateSubtitle = new Span();
             dateSubtitle.addClassNames("text-s", "text-secondary");
             dateSubtitle.setText(post.getFormattedDate());
 
             add(dateSubtitle);
 
-//            if (topic.getPostRelease() != null) {
-//                Span subtitle = new Span();
-//                subtitle.addClassNames("text-s", "text-secondary");
-//                subtitle.setText(topic.getPostRelease().getDescription());
-//
-//                add(subtitle);
-//            }
+
 
 
             StyledText description = new StyledText(post.getText());
@@ -63,7 +63,7 @@ public class PostView extends VerticalLayout implements BeforeEnterObserver {
             add(description);
 
 
-           constructUI();
+            constructUI();
 
 //            if (topic.getPhotos() != null && topic.getPhotos().size() > 0) {
 //                topic.getPhotos().stream().forEach(photo -> imageContainer.add(new TopicPhotoCard(photo)));

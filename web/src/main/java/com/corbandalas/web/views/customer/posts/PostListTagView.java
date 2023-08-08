@@ -10,7 +10,7 @@ import com.vaadin.flow.router.*;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import lombok.extern.slf4j.Slf4j;
 
-@PageTitle("Посты по тегам")
+@PageTitle("Статьи по тегам")
 @Route(value = "tags", layout = MainLayout.class)
 @RouteAlias(value = "tags", layout = MainLayout.class)
 @AnonymousAllowed

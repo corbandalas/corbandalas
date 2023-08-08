@@ -9,7 +9,7 @@ import com.vaadin.flow.router.*;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import lombok.extern.slf4j.Slf4j;
 
-@PageTitle("Последние новости")
+@PageTitle("Статьи")
 @Route(value = "posts", layout = MainLayout.class)
 @RouteAlias(value = "", layout = MainLayout.class)
 @AnonymousAllowed
@@ -45,7 +45,7 @@ public class PostListView extends BasePostView implements AfterNavigationObserve
     @Override
     public void afterNavigation(AfterNavigationEvent event) {
 
-        grid.setItems(query ->  postServicePort.retrieveAllByPage(query.getPage(), query.getPageSize()));
+        grid.setItems(query ->  postServicePort.retrieveAllByPage(query.getPage(), query.getPageSize(), "date"));
     }
 
     @Override
