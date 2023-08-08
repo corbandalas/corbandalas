@@ -9,6 +9,7 @@ import com.corbandalas.domain.ports.spi.RolePersistencePort;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.theme.Theme;
 import com.vaadin.flow.theme.lumo.Lumo;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -36,6 +37,11 @@ public class CorbandalasApplication implements AppShellConfigurator {
         SpringApplication.run(CorbandalasApplication.class, args);
     }
 
+    @Value("${default.customer.username}")
+    private String defaultAdminUsername;
+    @Value("${default.customer.password}")
+    private String defaultAdminPassword;
+
     @Bean
     @Profile("!test")
     public CommandLineRunner loadData(RoleServicePort roleServicePort, CustomerServicePort userService) {
@@ -46,12 +52,12 @@ public class CorbandalasApplication implements AppShellConfigurator {
                     .collect(Collectors.toList());
 
 
-            List.of("corban.dalas@me.com").stream().forEach(userName ->
+            List.of(defaultAdminUsername).stream().forEach(userName ->
 					userService.retrieveByEmail(userName).or(() -> Optional.of(userService.create(
 					CustomerDTO.builder()
 							.date(LocalDateTime.now())
 							.active(true)
-                            .hashedPassword("x13jkw34")
+                            .hashedPassword(defaultAdminPassword)
 							.email(userName)
 							.name("admin")
 							.roles(new HashSet<>(roleList))

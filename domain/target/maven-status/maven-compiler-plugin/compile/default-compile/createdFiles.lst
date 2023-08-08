@@ -15,7 +15,6 @@ com/corbandalas/domain/model/PostDTO.class
 com/corbandalas/domain/ports/api/CustomerServicePort.class
 com/corbandalas/domain/ports/api/RoleServicePort.class
 com/corbandalas/domain/model/BaseDTO$BaseDTOBuilder.class
-com/corbandalas/domain/ports/api/CloudStorageServicePort.class
 com/corbandalas/domain/model/PostDTO$PostDTOBuilder.class
 com/corbandalas/domain/model/CommentDTO.class
 com/corbandalas/domain/ports/spi/CrudPersistencePort.class
@@ -26,3 +25,4 @@ com/corbandalas/domain/model/RoleDTO$RoleDTOBuilderImpl.class
 com/corbandalas/domain/exception/FileStorageException.class
 com/corbandalas/domain/model/Tag.class
 com/corbandalas/domain/ports/spi/PostPersistencePort.class
+com/corbandalas/domain/ports/api/PasswordEncoder.class

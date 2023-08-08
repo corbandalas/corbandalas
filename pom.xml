@@ -16,7 +16,6 @@
         <module>telegram</module>
         <module>web</module>
         <module>data-jpa</module>
-        <module>yandex-storage</module>
     </modules>
 
 </project>

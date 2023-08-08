@@ -6,7 +6,6 @@
 /Users/artyomtereshchenko/IdeaProjects/corbandalas/domain/src/main/java/com/corbandalas/domain/exception/FileStorageException.java
 /Users/artyomtereshchenko/IdeaProjects/corbandalas/domain/src/main/java/com/corbandalas/domain/model/RoleDTO.java
 /Users/artyomtereshchenko/IdeaProjects/corbandalas/domain/src/main/java/com/corbandalas/domain/model/Tag.java
-/Users/artyomtereshchenko/IdeaProjects/corbandalas/domain/src/main/java/com/corbandalas/domain/ports/api/CloudStorageServicePort.java
 /Users/artyomtereshchenko/IdeaProjects/corbandalas/domain/src/main/java/com/corbandalas/domain/ports/api/CustomerServicePort.java
 /Users/artyomtereshchenko/IdeaProjects/corbandalas/domain/src/main/java/com/corbandalas/domain/ports/api/CrudServicePort.java
 /Users/artyomtereshchenko/IdeaProjects/corbandalas/domain/src/main/java/com/corbandalas/domain/ports/spi/CrudPersistencePort.java
