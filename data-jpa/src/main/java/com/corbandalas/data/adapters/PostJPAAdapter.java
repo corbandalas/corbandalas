@@ -78,14 +78,14 @@ public class PostJPAAdapter implements PostPersistencePort {
     @Override
     @Transactional
     @Cacheable
-    public List<PostDTO> getAll() {
+    public List<PostDTO> retrieveAll() {
         return postRepository.findAll().stream().map(postMapper::toDto).toList();
     }
 
     @Override
     @Transactional
     @Cacheable(cacheNames = "posts")
-    public List<PostDTO> getAll(int page, int pageSize, String... sortFieldName) {
+    public List<PostDTO> retrieveAll(int page, int pageSize, String... sortFieldName) {
         return postMapper.toDto(postRepository.findAllPosts(PageRequest.of(page, pageSize, (sortFieldName != null && sortFieldName.length > 0) ? Sort.by(sortFieldName).descending() : Sort.unsorted())));
     }
 

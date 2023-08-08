@@ -1,8 +1,6 @@
 package com.corbandalas.data.adapters;
 
-import com.corbandalas.data.mapper.PostMapper;
 import com.corbandalas.data.mapper.RoleMapper;
-import com.corbandalas.data.model.Role;
 import com.corbandalas.data.repository.RoleRepository;
 import com.corbandalas.domain.model.RoleDTO;
 import com.corbandalas.domain.ports.spi.RolePersistencePort;
@@ -44,17 +42,17 @@ public class RoleJPAAdapter implements RolePersistencePort {
     }
 
     @Override
-    public List<RoleDTO> getAll() {
+    public List<RoleDTO> retrieveAll() {
         return roleRepository.findAll().stream().map(roleMapper::toDto).toList();
     }
 
     @Override
-    public List<RoleDTO> getAll(int page, int pageSize, String... sortFieldName) {
-        return getAll();
+    public List<RoleDTO> retrieveAll(int page, int pageSize, String... sortFieldName) {
+        return retrieveAll();
     }
 
     @Override
-    public Optional<RoleDTO> getRoleByName(String name) {
+    public Optional<RoleDTO> retrieveRoleByName(String name) {
 
 
         return roleMapper.toDto(roleRepository.findByName(name));

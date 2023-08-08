@@ -12,6 +12,6 @@ public interface CrudServicePort<T extends BaseDTO> {
     Optional<T> retrieve(UUID uuid);
     T update(T dto);
     void delete(UUID uuid);
-    List<T> getAll();
-    Stream<T> getAllByPage(int page, int pageSize, String ...sortFieldName);
+    List<T> retrieveAll();
+    Stream<T> retrieveAllByPage(int page, int pageSize, String ...sortFieldName);
 }

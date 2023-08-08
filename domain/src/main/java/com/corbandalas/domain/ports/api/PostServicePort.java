@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.stream.Stream;
 
 public interface PostServicePort extends CrudServicePort<PostDTO> {
-    Stream<PostDTO> getPostsByDate(LocalDate startDate, LocalDate endDate, int page, int pageSize);
-    Stream<PostDTO> getPostsByTag(Tag tag, int page, int pageSize, String ...sortFieldName);
+    Stream<PostDTO> retrievePostsByDate(LocalDate startDate, LocalDate endDate, int page, int pageSize);
+    Stream<PostDTO> retrievePostsByTag(Tag tag, int page, int pageSize, String ...sortFieldName);
 
 }

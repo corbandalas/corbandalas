@@ -15,8 +15,8 @@ public interface CrudPersistencePort<T extends BaseDTO> {
 
     void delete(UUID uuid);
 
-    List<T> getAll();
+    List<T> retrieveAll();
 
-    List<T> getAll(int page, int pageSize, String ...sortFieldName);
+    List<T> retrieveAll(int page, int pageSize, String ...sortFieldName);
 
 }

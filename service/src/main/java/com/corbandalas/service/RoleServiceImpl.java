@@ -18,7 +18,7 @@ public class RoleServiceImpl extends CrudServiceImpl<RoleDTO> implements RoleSer
 
     @Override
 //    @Transactional(readOnly = true)
-    public Optional<RoleDTO> getRoleByName(String name) {
-        return rolePersistencePort.getRoleByName(name);
+    public Optional<RoleDTO> retrieveRoleByName(String name) {
+        return rolePersistencePort.retrieveRoleByName(name);
     }
 }

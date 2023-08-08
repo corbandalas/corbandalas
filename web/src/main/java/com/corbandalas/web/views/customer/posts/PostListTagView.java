@@ -48,7 +48,7 @@ public class PostListTagView extends BasePostView implements AfterNavigationObse
     @Override
     public void afterNavigation(AfterNavigationEvent event) {
 
-        grid.setItems(query ->  postServicePort.getPostsByTag(selectedTag, query.getPage(), query.getPageSize()));
+        grid.setItems(query ->  postServicePort.retrievePostsByTag(selectedTag, query.getPage(), query.getPageSize()));
     }
 
     @Override

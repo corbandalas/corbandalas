@@ -44,7 +44,7 @@ public class AdminListUserView extends VerticalLayout {
         setSizeFull();
         configureGrid();
 
-        form = new AdminAddUserForm(roleServicePort.getAll());
+        form = new AdminAddUserForm(roleServicePort.retrieveAll());
         form.setWidth("25em");
         form.addListener(AdminAddUserForm.SaveEvent.class, this::saveContact);
         form.addListener(AdminAddUserForm.DeleteEvent.class, this::deleteContact);
@@ -93,7 +93,7 @@ public class AdminListUserView extends VerticalLayout {
     }
 
     private void updateList() {
-        grid.setItems(customerServicePort.getAll());
+        grid.setItems(customerServicePort.retrieveAll());
     }
 
     private void saveContact(AdminAddUserForm.SaveEvent event) {

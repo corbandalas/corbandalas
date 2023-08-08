@@ -50,13 +50,13 @@ public abstract class CrudServiceImpl<T extends BaseDTO> implements CrudServiceP
 
 //    @Transactional
     @Override
-    public List<T> getAll() {
-        return crudPersistencePort.getAll();
+    public List<T> retrieveAll() {
+        return crudPersistencePort.retrieveAll();
     }
 
 //    @Transactional
     @Override
-    public Stream<T> getAllByPage(int page, int pageSize, String ...sortFieldName) {
-        return crudPersistencePort.getAll(page, pageSize, sortFieldName).stream();
+    public Stream<T> retrieveAllByPage(int page, int pageSize, String ...sortFieldName) {
+        return crudPersistencePort.retrieveAll(page, pageSize, sortFieldName).stream();
     }
 }

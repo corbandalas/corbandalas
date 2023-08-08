@@ -45,7 +45,7 @@ public class PostListView extends BasePostView implements AfterNavigationObserve
     @Override
     public void afterNavigation(AfterNavigationEvent event) {
 
-        grid.setItems(query ->  postServicePort.getAllByPage(query.getPage(), query.getPageSize()));
+        grid.setItems(query ->  postServicePort.retrieveAllByPage(query.getPage(), query.getPageSize()));
     }
 
     @Override

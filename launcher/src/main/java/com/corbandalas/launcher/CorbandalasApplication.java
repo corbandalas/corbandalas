@@ -1,11 +1,9 @@
 package com.corbandalas.launcher;
 
-import com.corbandalas.data.mapper.RoleMapper;
 import com.corbandalas.domain.model.CustomerDTO;
 import com.corbandalas.domain.model.RoleDTO;
 import com.corbandalas.domain.ports.api.CustomerServicePort;
 import com.corbandalas.domain.ports.api.RoleServicePort;
-import com.corbandalas.domain.ports.spi.RolePersistencePort;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.theme.Theme;
 import com.vaadin.flow.theme.lumo.Lumo;
@@ -48,7 +46,7 @@ public class CorbandalasApplication implements AppShellConfigurator {
         return (args) -> {
 
             List<RoleDTO> roleList = List.of("ROLE_USER", "ROLE_ADMIN").stream().map(role ->
-                            roleServicePort.getRoleByName(role).or(() -> Optional.of(roleServicePort.create(new RoleDTO(role)))).get())
+                            roleServicePort.retrieveRoleByName(role).or(() -> Optional.of(roleServicePort.create(new RoleDTO(role)))).get())
                     .collect(Collectors.toList());
 
 

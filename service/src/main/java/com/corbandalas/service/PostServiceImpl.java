@@ -20,12 +20,12 @@ public class PostServiceImpl extends CrudServiceImpl<PostDTO> implements PostSer
     }
 
     @Override
-    public Stream<PostDTO> getPostsByDate(LocalDate startDate, LocalDate endDate, int page, int pageSize) {
+    public Stream<PostDTO> retrievePostsByDate(LocalDate startDate, LocalDate endDate, int page, int pageSize) {
         return postPersistencePort.retrieveByDateIsBetween(startDate, endDate, page, pageSize).stream();
     }
 
     @Override
-    public Stream<PostDTO> getPostsByTag(Tag tag, int page, int pageSize, String... sortFieldName) {
+    public Stream<PostDTO> retrievePostsByTag(Tag tag, int page, int pageSize, String... sortFieldName) {
         return postPersistencePort.retrieveAllByTag(tag, page, pageSize, sortFieldName).stream();
     }
 

@@ -13,12 +13,10 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
-import jakarta.annotation.security.RolesAllowed;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 
@@ -49,7 +47,7 @@ public class PostListView extends VerticalLayout {
         setSizeFull();
         configureGrid();
 
-        form = new PostForm(customerServicePort.getAll());
+        form = new PostForm(customerServicePort.retrieveAll());
         form.setWidth("25em");
         form.addListener(PostForm.SaveEvent.class, this::savePostStamp);
         form.addListener(PostForm.DeleteEvent.class, this::deleteContact);
@@ -92,7 +90,7 @@ public class PostListView extends VerticalLayout {
 
             endDate = event.getValue();
 
-            grid.setItems(query -> postServicePort.getPostsByDate(startDate, endDate, query.getPage(), query.getPageSize()));
+            grid.setItems(query -> postServicePort.retrievePostsByDate(startDate, endDate, query.getPage(), query.getPageSize()));
         });
 
         Button addContactButton = new Button("Добавить пост");
@@ -163,7 +161,7 @@ public class PostListView extends VerticalLayout {
     }
 
     private void updateList() {
-        grid.setItems(query -> postServicePort.getAllByPage(query.getPage(), query.getLimit()));
+        grid.setItems(query -> postServicePort.retrieveAllByPage(query.getPage(), query.getLimit()));
     }
 
     public Date convertToDateViaInstant(LocalDate dateToConvert) {

@@ -6,6 +6,6 @@ import java.util.Optional;
 
 public interface RolePersistencePort extends CrudPersistencePort<RoleDTO> {
 
-    Optional<RoleDTO> getRoleByName(String name);
+    Optional<RoleDTO> retrieveRoleByName(String name);
 
 }

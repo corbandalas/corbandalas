@@ -59,12 +59,12 @@ public class CustomerJPAAdapter implements CustomerPersistencePort {
     }
 
     @Override
-    public List<CustomerDTO> getAll() {
+    public List<CustomerDTO> retrieveAll() {
         return customerRepository.findAll().stream().map(customerMapper::toDto).toList();
     }
 
     @Override
-    public List<CustomerDTO> getAll(int page, int pageSize, String... sortFieldName) {
+    public List<CustomerDTO> retrieveAll(int page, int pageSize, String... sortFieldName) {
         return customerMapper.toDto(customerRepository.findAllCustomers(PageRequest.of(page, pageSize, (sortFieldName != null && sortFieldName.length > 0) ? Sort.by(sortFieldName).descending() : Sort.unsorted())));
     }
 
