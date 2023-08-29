@@ -13,6 +13,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
+import jakarta.annotation.security.RolesAllowed;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -25,8 +26,8 @@ import java.util.Date;
 @Scope("prototype")
 @Route(value = "admin/posts", layout = AdminLayout.class)
 @PageTitle("Посты | corbandalas.com")
-//@RolesAllowed("ROLE_ADMIN")
-@AnonymousAllowed
+@RolesAllowed("ROLE_ADMIN")
+//@AnonymousAllowed
 public class PostListView extends VerticalLayout {
     private Grid<PostDTO> grid = new Grid<>(PostDTO.class);
 

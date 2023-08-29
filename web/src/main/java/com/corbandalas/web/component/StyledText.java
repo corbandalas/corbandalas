@@ -34,7 +34,7 @@ public class StyledText extends Composite<Span> implements HasText {
         }
         text = htmlText;
         content.removeAll();
-        content.add(new Html("<span>" + htmlText + "</span>"));
+        content.add(new Html("<span style=\"display:block; width:100px;\">" + htmlText + "</span>"));
     }
 
     @Override

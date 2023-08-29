@@ -5,7 +5,7 @@ import com.corbandalas.web.appnav.AppNav;
 import com.corbandalas.web.appnav.AppNavItem;
 import com.corbandalas.web.security.AuthenticatedUser;
 import com.corbandalas.web.views.customer.MainLayout;
-import com.corbandalas.web.views.customer.about.AboutView;
+import com.corbandalas.web.views.customer.info.AboutView;
 import com.corbandalas.web.views.customer.posts.PostListView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;

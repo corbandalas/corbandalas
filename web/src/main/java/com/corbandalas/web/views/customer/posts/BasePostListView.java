@@ -1,14 +1,32 @@
 package com.corbandalas.web.views.customer.posts;
 
 import com.corbandalas.domain.model.PostDTO;
+import com.corbandalas.domain.ports.api.PostServicePort;
 import com.corbandalas.web.views.TagBadgeHolder;
+import com.corbandalas.web.views.customer.MainLayout;
+import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.grid.GridVariant;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.server.StreamResource;
 
-public class BasePostView extends Div {
+public class BasePostListView extends Div {
 
+    private PostServicePort postServicePort;
     public static final int TOPIC_TRUNK_SIZE = 250;
+
+    private Grid<PostDTO> grid = new Grid<>();
+
+    public BasePostListView(PostServicePort postServicePort) {
+        this.postServicePort = postServicePort;
+        addClassName("card-list-view");
+        setSizeFull();
+        grid.setHeight("100%");
+        grid.addThemeVariants(GridVariant.LUMO_NO_BORDER, GridVariant.LUMO_NO_ROW_BORDERS);
+        grid.addComponentColumn(postDTO -> createCard(postDTO));
+        add(grid);
+    }
 
     private void addTagsToLayout(PostDTO postDTO, VerticalLayout description) {
         if (postDTO.getTags() != null) {
@@ -53,14 +71,18 @@ public class BasePostView extends Div {
         card.setSpacing(false);
         card.getThemeList().add("spacing-s");
 
-        String defaultImageURL = "https://sun9-north.userapi.com/sun9-79/s/v1/if1/NY1A9C8V4PLYL3m0xzLU7Q8khTmdYuvc1scNbEjUMz-4SnbHiQm_GmdJy7m4N7Pu8QfNuvn5.jpg?size=307x200&quality=96&type=album";
+         StreamResource res = new StreamResource("bg.png", () -> {
+             // eg. load image data from classpath (src/main/resources/images/image.png)
+             return MainLayout.class.getClassLoader().getResourceAsStream("images/donbass.jpg");
+         });
+         Image image = new Image( res,"corbandalas.com .:. I am that I am");
 
-        Image image = new Image();
+
+
 //        if (topic.getPhotos() != null && topic.getPhotos().size() > 0) {
 //            image.setSrc(topic.getPhotos().stream().findFirst().orElse(defaultImageURL));
 //
 //        } else {
-        image.setSrc(defaultImageURL);
 //        }
 
         VerticalLayout description = new VerticalLayout();
@@ -128,4 +150,13 @@ public class BasePostView extends Div {
 
         return card;
     }
+
+    public PostServicePort getPostServicePort() {
+        return postServicePort;
+    }
+
+    public Grid<PostDTO> getGrid() {
+        return grid;
+    }
+
 }

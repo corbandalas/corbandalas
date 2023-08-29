@@ -19,8 +19,10 @@ import com.vaadin.flow.shared.Registration;
 import com.wontlost.ckeditor.Constants;
 import com.wontlost.ckeditor.VaadinCKEditor;
 import com.wontlost.ckeditor.VaadinCKEditorBuilder;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.extern.slf4j.Slf4j;
 
+import java.lang.ref.SoftReference;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -32,12 +34,16 @@ public class PostForm extends FormLayout {
 
     private PostDTO post;
 
+    @NotEmpty
     private DatePicker date = new DatePicker();
 
+    @NotEmpty
     private TextField title = new TextField("Заголовок");
+
     VaadinCKEditor textEditor = new VaadinCKEditorBuilder().with(builder->{
         builder.editorType= Constants.EditorType.INLINE;
         builder.editorData="Inline";
+        builder.autosave = Boolean.FALSE;
     }).createVaadinCKEditor();
 
 //    private TextField circulation = new TextField("Тираж");
@@ -55,6 +61,8 @@ public class PostForm extends FormLayout {
     Button save = new Button("Сохранить");
     Button delete = new Button("Удалить");
     Button close = new Button("Отменить");
+
+
 
     public PostForm(List<CustomerDTO> allCustomers) {
         addClassName("contact-form");

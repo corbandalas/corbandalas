@@ -4,7 +4,9 @@ import com.corbandalas.domain.model.CustomerDTO;
 import com.corbandalas.web.appnav.AppNav;
 import com.corbandalas.web.appnav.AppNavItem;
 import com.corbandalas.web.security.AuthenticatedUser;
-import com.corbandalas.web.views.customer.about.AboutView;
+import com.corbandalas.web.views.customer.info.AboutView;
+import com.corbandalas.web.views.customer.info.BioView;
+import com.corbandalas.web.views.customer.info.InfoPageView;
 import com.corbandalas.web.views.customer.posts.PostListView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -29,7 +31,7 @@ import java.util.Optional;
 @CssImport("/themes/myapp/styles.css")
 public class MainLayout extends AppLayout {
 
-    private H2 viewTitle;
+    private H3 viewTitle;
 
     private AuthenticatedUser authenticatedUser;
     private AccessAnnotationChecker accessChecker;
@@ -48,8 +50,8 @@ public class MainLayout extends AppLayout {
         DrawerToggle toggle = new DrawerToggle();
         toggle.getElement().setAttribute("aria-label", "Menu toggle");
 
-        viewTitle = new H2();
-        viewTitle.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
+        viewTitle = new H3();
+        viewTitle.addClassNames(LumoUtility.FontSize.MEDIUM, LumoUtility.Margin.NONE);
 
         addToNavbar(true, toggle, viewTitle);
     }
@@ -96,6 +98,14 @@ public class MainLayout extends AppLayout {
             nav.addItem(new AppNavItem("Статьи", PostListView.class,  LineAwesomeIcon.FILE.create()));
 
         }
+
+        if (accessChecker.hasAccess(BioView.class)) {
+            nav.addItem(new AppNavItem("Биография", BioView.class,  LineAwesomeIcon.ADDRESS_BOOK.create()));
+
+        }
+
+
+
         if (accessChecker.hasAccess(AboutView.class)) {
             nav.addItem(new AppNavItem("О сайте", AboutView.class,  LineAwesomeIcon.SUN.create()));
 
@@ -160,6 +170,6 @@ public class MainLayout extends AppLayout {
 
     private String getCurrentPageTitle() {
         PageTitle title = getContent().getClass().getAnnotation(PageTitle.class);
-        return title == null ? "corbandalas.com .:. I Am that I Am" : String.join("corbandalas.com .:.",title.value());
+        return "Записки донецкого программиста ";
     }
 }

@@ -4,5 +4,7 @@ public enum Tag {
     JAVA,
     SPRING,
     SQL,
+    BIO,
+    ABOUT,
     OTHER
 }
