@@ -18,7 +18,7 @@ import java.util.UUID;
 @Repository
 public interface PostRepository extends JpaRepository<Post, UUID> {
 
-    @Query("SELECT distinct p from Post p left JOIN FETCH p.comments left join fetch p.tags")
+    @Query("SELECT distinct p from Post p left join fetch p.tags")
     List<Post> findAllPosts(Pageable pageable);
 
     @Query("SELECT distinct p from Post p left JOIN FETCH p.comments left join fetch p.tags where 'date'  between ?1 AND ?2")

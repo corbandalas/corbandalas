@@ -35,7 +35,7 @@ public class PostJPAAdapter implements PostPersistencePort {
 
     @Override
     @Transactional
-    @Caching(put = @CachePut(cacheNames = "post", key = "#result.id"),
+    @Caching(put = @CachePut(cacheNames = "post", key = "#result.uuid"),
             evict = {@CacheEvict(cacheNames = "posts", allEntries = true),
                     @CacheEvict(cacheNames = "post_tags", allEntries = true)
             })
